@@ -1,0 +1,79 @@
+hdfs@edgenode:/home/magesh_nice$ hdfs dfsadmin -report
+
+Configured Capacity: 103472685056 (96.37 GB)
+Present Capacity: 88833593344 (82.73 GB)
+DFS Remaining: 80286507008 (74.77 GB)
+DFS Used: 8547086336 (7.96 GB)
+DFS Used%: 9.62%
+Under replicated blocks: 36
+Blocks with corrupt replicas: 0
+Missing blocks: 0
+Missing blocks (with replication factor 1): 0
+
+-------------------------------------------------
+Live datanodes (2):
+
+Name: 10.240.0.4:50010 (datanode2.c.smooth-verve-119612.internal)
+Hostname: datanode2.c.smooth-verve-119612.internal
+hdfs@edgenode:/home/magesh_nice$ hdfs dfsadmin -report
+Configured Capacity: 103472685056 (96.37 GB)
+Present Capacity: 88833589248 (82.73 GB)
+DFS Remaining: 80286502912 (74.77 GB)
+DFS Used: 8547086336 (7.96 GB)
+DFS Used%: 9.62%
+Under replicated blocks: 36
+Blocks with corrupt replicas: 0
+Missing blocks: 0
+Missing blocks (with replication factor 1): 0
+
+-------------------------------------------------
+Live datanodes (2):
+
+Name: 10.240.0.4:50010 (datanode2.c.smooth-verve-119612.internal)
+Hostname: datanode2.c.smooth-verve-119612.internal
+Decommission Status : Normal
+Configured Capacity: 51736342528 (48.18 GB)
+DFS Used: 4273553408 (3.98 GB)
+Non DFS Used: 7146426368 (6.66 GB)
+DFS Remaining: 40316362752 (37.55 GB)
+DFS Used%: 8.26%
+DFS Remaining%: 77.93%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 2
+Last contact: Tue Feb 02 07:45:51 UTC 2016
+
+
+Name: 10.240.0.3:50010 (dnnm.c.smooth-verve-119612.internal)
+Hostname: dnnm.c.smooth-verve-119612.internal
+Decommission Status : Normal
+Configured Capacity: 51736342528 (48.18 GB)
+DFS Used: 4273532928 (3.98 GB)
+Non DFS Used: 7492669440 (6.98 GB)
+DFS Remaining: 39970140160 (37.23 GB)
+DFS Used%: 8.26%
+DFS Remaining%: 77.26%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 2
+Last contact: Tue Feb 02 07:45:48 UTC 2016
+
+
+Formula for calculating the Non DFS used:
+
+Because Configured Capacity = Total Disk Space - Reserved Space.
+
+So Non DFS used = ( Total Disk Space - Reserved Space) - Remaining Space - DFS Used
+
+
+Non DFS used is any data in the filesystem of the data node(s) that isn't in \
+dfs.datanode.data.dirs.
+
+This would include log files, mapreduce shuffle output and local copies of data files \
+(if you put them on a data node).

@@ -1,0 +1,22 @@
+NFS : Network File System
+
+NFS stands for Network File System, a file system developed by Sun Microsystems, Inc. It is a client/server system that allows users to access files across a network and treat them as if they resided in a local file directory. For example, if you were using a computer linked to a second computer via NFS, you could access files on the second computer as if they resided in a directory on the first computer. This is accomplished through the processes of exporting (the process by which an NFS server provides remote clients with access to its files) and mounting (the process by which file systems are made available to the operating system and the user).
+
+The NFS protocol is designed to be independent of the computer, operating system, network architecture, and transport protocol. This means that systems using the NFS service may be manufactured by different vendors, use different operating systems, and be connected to networks with different architectures. These differences are transparent to the NFS application, and thus, the user.
+
+Split-Briain : http://whatis.techtarget.com/definition/split-brain-syndrome
+
+Hadoop HA:
+
+http://www.informit.com/articles/article.aspx?p=2460260&seqNum=6
+
+Network File System [NFS] mount from a NAS
+
+
+How to install eclipse in Redhat:  http://www.tecmint.com/install-eclipse-classic-in-rhel-centos-fedora/
+
+Partitioner: http://blog.puneethabm.in/custom-partitioner-in-mapreduce-using-new-hadoop-api-2/	
+
+
+
+https://github.com/MageshSivagnanam/Hadoop.git

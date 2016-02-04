@@ -1,0 +1,76 @@
+How to Connect One Redhat to another Linux
+
+Step : 1 
+
+From Outside Redhat server create ssh key
+
+Step : 2
+
+it will create two keys public and private
+
+Step : 3
+
+Copy the public key of redhat and paste in the authrized_keys file in Google Linux machine
+
+Step : 4
+
+From Redhat machine type ssh magesh_nice@Ip_Address
+
+Step : 5 
+
+Terminal window will connect to the google edge node
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+How To transfer file From Redhat to Google Edge Node
+
+Step 1:
+
+	scp /home/innovchn/mageshjava/MapReduce/target/MapReduce-0.0.1-SNAPSHOT.jar magesh_nice@162.222.178.59:/home/magesh_nice
+
+https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Deployment_Guide/s2-openssh-using-scp.html
+
+Step 2: 
+
+	File will get transferred to the remote host
+
+
+
+sudo scp /usr/hdp/2.3.4.0-3485/hadoop-hdfs/hadoop-hdfs-2.7.1.2.3.4.0-3485.jar innovchn@10.76.190.86:/home/innovchn
+
+hadoop jar /home/magesh_nice/MapReduce-0.0.1-SNAPSHOT.jar WordCountJob /user/magesh/test /user/magesh/testout
+
+scp /home/innovchn/git/mageshhadoopgit/MapReduce/target/MapReduce-0.0.1-SNAPSHOT.jar  magesh_nice@162.222.178.59:/home/magesh_nice
+
+scp /home/innovchn/PartitionerSampleFile  magesh_nice@162.222.178.59:/home/magesh_nice
+
+hadoop jar /home/magesh_nice/MapReduce-0.0.1-SNAPSHOT.jar AlphaDriver /user/magesh/PartitionerSampleFile /user/magesh/partitionerout
+
+
+Important Points in Hadoop Partitioner
+-------------------------------------------
+
+1 * Partitoner will start from zero
+
+2 * Error: java.io.IOException: Illegal partition for f (6)  This error will throw when we are declaring job.setNumReduceTasks(6); and having 
+	Switch(){
+		
+		case(a): goto partioner 1;
+		case (f): goto partitioner 6;	// while executing this line it will throw illegal exception. becoz the partitioner will start from 0 so if we declare 6 means 0 1 2 3 4 5. but 
+		in the code we are asking to go to partioner 6 so partitioner 6 not exists and it throws the illgal exception
+	}
+Error: java.io.IOException: Illegal partition for f (6)
+	at org.apache.hadoop.mapred.MapTask$MapOutputBuffer.collect(MapTask.java:1082)
+	at org.apache.hadoop.mapred.MapTask$NewOutputCollector.write(MapTask.java:715)
+	at org.apache.hadoop.mapreduce.task.TaskInputOutputContextImpl.write(TaskInputOutputContextImpl.java:89)
+	at org.apache.hadoop.mapreduce.lib.map.WrappedMapper$Context.write(WrappedMapper.java:112)
+	at partitionerdemo.AlphaMapper.map(AlphaMapper.java:23)
+	at partitionerdemo.AlphaMapper.map(AlphaMapper.java:11)
+	at org.apache.hadoop.mapreduce.Mapper.run(Mapper.java:146)
+	at org.apache.hadoop.mapred.MapTask.runNewMapper(MapTask.java:787)
+	at org.apache.hadoop.mapred.MapTask.run(MapTask.java:341)
+	at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:168)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:415)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1657)
+	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:162)
+
