@@ -1,3 +1,7 @@
-/home/innovchn/mageshjava/MapReduce/src/main/java/reducer/WordCountReducer.java
-/home/innovchn/mageshjava/MapReduce/src/main/java/WordCountJob.java
-/home/innovchn/mageshjava/MapReduce/src/main/java/mapper/WordCountMapper.java
+/home/innovchn/git/mageshhadoopgit/MapReduce/src/main/java/partitionerdemo/AlphaPartitioner.java
+/home/innovchn/git/mageshhadoopgit/MapReduce/src/main/java/mapper/WordCountMapper.java
+/home/innovchn/git/mageshhadoopgit/MapReduce/src/main/java/reducer/WordCountReducer.java
+/home/innovchn/git/mageshhadoopgit/MapReduce/src/main/java/partitionerdemo/AlphaDriver.java
+/home/innovchn/git/mageshhadoopgit/MapReduce/src/main/java/partitionerdemo/AlphaMapper.java
+/home/innovchn/git/mageshhadoopgit/MapReduce/src/main/java/WordCountJob.java
+/home/innovchn/git/mageshhadoopgit/MapReduce/src/main/java/partitionerdemo/AlphaReducer.java
