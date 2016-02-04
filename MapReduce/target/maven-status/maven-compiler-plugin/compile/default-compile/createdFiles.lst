@@ -1,0 +1,3 @@
+WordCountJob.class
+mapper/WordCountMapper.class
+reducer/WordCountReducer.class
